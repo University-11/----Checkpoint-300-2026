@@ -1,0 +1,10 @@
+version: "3.9"
+services:
+  java-blueprints-studio:
+    build: .
+    container_name: axenix-java-blueprints-v3
+    ports:
+      - "8080:8080"
+    environment:
+      - PORT=8080
+      - JAVA_TOOL_OPTIONS=-Dfile.encoding=UTF-8

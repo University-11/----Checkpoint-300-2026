@@ -1,0 +1,43 @@
+/* Axenix Java Blueprints v3.0 — Production Theme & 2D DAG Stylesheet */
+:root {
+  --bg-main: #0b0f19;
+  --bg-panel: #111827;
+  --bg-card: #1e293b;
+  --border-col: #2e3b52;
+  --axenix-orange: #ff6b2b;
+}
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  background-color: var(--bg-main);
+  color: #e2e8f0;
+  overflow-x: hidden;
+}
+code, pre, .font-mono {
+  font-family: 'JetBrains Mono', monospace;
+}
+.blueprint-grid {
+  background-color: #0b1120;
+  background-image:
+    linear-gradient(to right, rgba(148, 163, 184, 0.06) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(148, 163, 184, 0.06) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+.node-card {
+  transition: all 0.18s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.node-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.6), 0 0 14px rgba(59, 130, 246, 0.35);
+}
+.node-selected {
+  outline: 2px solid #ff6b2b !important;
+  box-shadow: 0 0 0 4px rgba(255, 107, 43, 0.22) !important;
+}
+.code-line-highlight {
+  background-color: rgba(255, 107, 43, 0.22);
+  border-left: 3px solid #ff6b2b;
+}
+.code-line-defect {
+  background-color: rgba(239, 68, 68, 0.16);
+  border-left: 3px solid #ef4444;
+}

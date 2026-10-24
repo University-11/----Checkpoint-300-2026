@@ -1,0 +1,12 @@
+{
+  "name": "@axenix/java-blueprints-frontend",
+  "version": "3.0.0",
+  "description": "Modular Frontend IDE for Axenix Java Blueprints v3.0 (AST/CFG 2D DAG, Call Graph, SRP Decomposer, Bonus Scope Inspector)",
+  "private": true,
+  "scripts": {
+    "start": "python3 ../server.py",
+    "verify": "python3 ../server.py --verify"
+  },
+  "author": "Axenix Hackathon Team",
+  "license": "MIT"
+}

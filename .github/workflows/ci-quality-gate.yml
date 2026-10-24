@@ -1,0 +1,29 @@
+name: Axenix Java Blueprints Quality Gate CI
+
+on:
+  push:
+    branches: [ "main", "master" ]
+  pull_request:
+    branches: [ "main", "master" ]
+
+jobs:
+  quality-gate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Set up OpenJDK 17
+        uses: actions/setup-java@v4
+        with:
+          java-version: "17"
+          distribution: "temurin"
+
+      - name: Execute 16-Suite Behavioral Equivalence & Differential Fuzzing Gate
+        run: python3 server.py --verify
+
+      - name: Export AST/CFG JSON Diagnostics for All 3 Monoliths
+        run: |
+          java engine/BlueprintEngine.java --analyze-json monoliths/OrderProcessingMonolith.java > /tmp/ast_order.json
+          java engine/BlueprintEngine.java --analyze-json monoliths/LogAnalyticsMonolith.java > /tmp/ast_log.json
+          java engine/BlueprintEngine.java --analyze-json monoliths/BonusScopeShowcaseMonolith.java > /tmp/ast_bonus.json
